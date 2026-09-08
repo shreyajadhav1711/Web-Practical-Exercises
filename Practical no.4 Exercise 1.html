@@ -36,15 +36,12 @@
     </style>
 </head>
 <body>
-
     <h1>JavaScript Basics Exercise</h1>
-    
     <div class="instruction-box">
         <strong>How to view the output:</strong> This page runs JavaScript in the background. 
         Please open your browser's <strong>Developer Console</strong> to see the output of the code. 
         <br><em>(Press <strong>F12</strong> or <strong>Ctrl+Shift+I</strong> / <strong>Cmd+Option+I</strong>, then click the "Console" tab).</em>
     </div>
-
     <h2>Demonstrated Concepts:</h2>
     <ul>
         <li>Variables (<code>let</code>, <code>const</code>)</li>
@@ -53,43 +50,26 @@
         <li>Loops (<code>for</code>, <code>while</code>)</li>
         <li>JavaScript Functions</li>
     </ul>
-
-    <!-- Inline JavaScript Execution -->
     <script>
-        // ==========================================
-        // 1. VARIABLES & ARITHMETIC OPERATORS
-        // ==========================================
         console.log("=== 1. Variables & Arithmetic Operators ===");
         const firstNumber = 15; 
         let secondNumber = 4;   
         let result;
-
         result = firstNumber + secondNumber;  
         console.log("Addition (15 + 4):", result);     
-
         result = firstNumber - secondNumber;  
         console.log("Subtraction (15 - 4):", result);  
-
         result = firstNumber * secondNumber;  
         console.log("Multiplication (15 * 4):", result); 
-
         result = firstNumber / secondNumber;  
         console.log("Division (15 / 4):", result);     
-
         result = firstNumber % secondNumber;  
         console.log("Remainder / Modulus (15 % 4):", result);    
-
         result = secondNumber ** 2;           
         console.log("Exponentiation (4 squared):", result); 
-        console.log("\n"); // Blank line for spacing
-
-
-        // ==========================================
-        // 2. CONDITIONAL STATEMENTS
-        // ==========================================
+        console.log("\n");
         console.log("=== 2. Conditional Statements ===");
         let totalScore = 78;
-
         if (totalScore >= 90) {
             console.log("Score:", totalScore, "-> Grade: A");
         } else if (totalScore >= 75) {
@@ -100,17 +80,11 @@
             console.log("Score:", totalScore, "-> Grade: F");
         }
         console.log("\n");
-
-
-        // ==========================================
-        // 3. LOOPS
-        // ==========================================
         console.log("=== 3. Loops ===");
         console.log("For Loop Example (Counting 1 to 5):");
         for (let i = 1; i <= 5; i++) {
             console.log("  Iteration:", i);
         }
-
         console.log("While Loop Example (Countdown):");
         let countdown = 3;
         while (countdown > 0) {
@@ -118,37 +92,23 @@
             countdown--; 
         }
         console.log("\n");
-
-
-        // ==========================================
-        // 4. JAVASCRIPT FUNCTIONS
-        // ==========================================
         console.log("=== 4. JavaScript Functions ===");
         function calculateRectangleArea(width, height) {
             return width * height;
         }
-
         let roomArea = calculateRectangleArea(10, 5);
         console.log("Area of 10x5 room:", roomArea, "sq meters"); 
-
         let boxArea = calculateRectangleArea(7, 3);
         console.log("Area of 7x3 box:", boxArea, "sq meters");  
         console.log("\n");
-
-
-        // ==========================================
-        // 5. ALL-IN-ONE SYSTEM
-        // ==========================================
         console.log("=== 5. All-in-One Comprehensive Script ===");
         const passMark = 50;
         const scoresList =;
-
         function checkClassPerformance(scoresArray) {
             console.log("Processing class array records...");
             for (let i = 0; i < scoresArray.length; i++) {
                 let currentScore = scoresArray[i];
                 let finalReport = "Score " + currentScore + " is a ";
-
                 if (currentScore >= passMark) {
                     finalReport += "PASS";
                 } else {
@@ -157,8 +117,6 @@
                 console.log(finalReport);
             }
         }
-
-        // Call the functional system
         checkClassPerformance(scoresList);
     </script>
 </body>
