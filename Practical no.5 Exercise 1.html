@@ -61,25 +61,13 @@
     </style>
 </head>
 <body>
-
     <div class="container">
-        <!-- 1. Heading element target -->
         <h1 id="mainHeading">Original Title</h1>
-
-        <!-- 2. Paragraph element target for innerText -->
         <p id="textParagraph">This is the original paragraph text.</p>
-
-        <!-- 3. Element target for textContent -->
         <div id="contentDisplay">Initial plain placeholder text.</div>
-        
-        <!-- 5. Image element target -->
         <img id="dynamicImage" class="interactive-image" src="https://picsum.photos" alt="Initial Image">
-
-        <!-- 6. Hyperlink element target -->
         <a id="dynamicLink" href="https://example.com" target="_blank">Visit Example Website</a>
     </div>
-
-    <!-- Control station to fire DOM modifications -->
     <div class="btn-group">
         <button onclick="modifyHeading()">1. Change via innerHTML</button>
         <button onclick="modifyParagraph()">2. Change via innerText</button>
@@ -88,56 +76,40 @@
         <button onclick="modifyImage()">5. Change Image Dynamically</button>
         <button onclick="modifyLink()">6. Change Hyperlink Dynamically</button>
     </div>
-
     <script>
-        // 1. Change heading using innerHTML (allows evaluating HTML tags like <span> or <em>)
         function modifyHeading() {
             const heading = document.getElementById("mainHeading");
             heading.innerHTML = "Updated Title with <span style='color: #e53e3e;'>innerHTML Sparkle</span>";
             console.log("Heading swapped out using .innerHTML property.");
         }
-
-        // 2. Change paragraph using innerText (renders text safely exactly as seen on screen)
         function modifyParagraph() {
             const paragraph = document.getElementById("textParagraph");
             paragraph.innerText = "This paragraph's body text was completely re-assigned using the clean .innerText string injection approach.";
             console.log("Paragraph modified with .innerText.");
         }
-
-        // 3. Display text using textContent (safe, efficient, raw text alteration method)
         function modifyContent() {
             const block = document.getElementById("contentDisplay");
             block.textContent = "Raw textual data refreshed successfully using .textContent interface.";
             console.log("Text nodes rendered raw using .textContent.");
         }
-
-        // 4. Change text color and font size via element style modifications
         function modifyStyles() {
             const paragraph = document.getElementById("textParagraph");
-            // Direct injection to style sub-properties
             paragraph.style.color = "#2b6cb0"; 
             paragraph.style.fontSize = "20px";
             console.log("Paragraph updated to customized visual layout theme.");
         }
-
-        // 5. Change image dynamically via attribute property reassignment
         function modifyImage() {
             const image = document.getElementById("dynamicImage");
-            // Alters source link point and descriptive auxiliary elements
             image.src = "https://picsum.photos";
             image.alt = "New dynamically swapped landscape visual view";
             console.log("Image source reference directed to alternative location frame.");
         }
-
-        // 6. Change hyperlink destination and display text dynamically
         function modifyLink() {
             const link = document.getElementById("dynamicLink");
-            // Update active absolute web navigation address anchor path
             link.href = "https://wikipedia.org";
             link.textContent = "Explore Global Database on Wikipedia";
             console.log("Hyperlink reference and visual text shifted targets successfully.");
         }
     </script>
-
 </body>
 </html>
