@@ -67,65 +67,43 @@
     </style>
 </head>
 <body>
-
     <div class="form-container">
         <h2>Register Account</h2>
-        
-        <!-- onsubmit Event captures form submission attempts -->
         <form id="registrationForm" onsubmit="return validateForm(event)">
-            
-            <!-- Name Input Field -->
             <div class="form-group">
                 <label for="fullName">Full Name</label>
                 <input type="text" id="fullName" placeholder="Enter your full name">
             </div>
-
-            <!-- Email Input Field -->
             <div class="form-group">
                 <label for="userEmail">Email Address</label>
                 <input type="email" id="userEmail" placeholder="name@example.com">
             </div>
-
-            <!-- Submit Button with onclick and onmouseover Events -->
             <button type="submit" 
                     class="submit-btn" 
                     onclick="handleClick()" 
                     onmouseover="handleMouseOver()">
                 Submit Registration
             </button>
-            
             <p id="eventHint" class="hint-text" style="text-align: center; display: none;">
                You hovered over the submit button!
             </p>
         </form>
     </div>
-
     <script>
-        // 1. onmouseover Event Handler
         function handleMouseOver() {
-            // Show a visual hint text on the page when the button is hovered
             document.getElementById("eventHint").style.display = "block";
             console.log("Mouse pointer hovered over the submit button.");
         }
-
-        // 2. onclick Event Handler
         function handleClick() {
             console.log("Submit button clicked. Initializing evaluation flow...");
         }
-
-        // 3. onsubmit Event Handler and Input Validation Logic
         function validateForm(event) {
-            // Capture elements
             const nameInput = document.getElementById("fullName").value.trim();
             const emailInput = document.getElementById("userEmail").value.trim();
-            
-            // Regular expression profile for evaluating structured email formats
             const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-
-            // Name Field Validation
             if (nameInput === "") {
                 alert(" Validation Error: Name field cannot be empty!");
-                event.preventDefault(); // Stop form submission execution
+                event.preventDefault(); 
                 return false;
             }
             if (nameInput.length < 3) {
@@ -133,8 +111,6 @@
                 event.preventDefault(); 
                 return false;
             }
-
-            // Email Field Validation
             if (emailInput === "") {
                 alert(" Validation Error: Email field cannot be empty!");
                 event.preventDefault();
@@ -145,12 +121,9 @@
                 event.preventDefault();
                 return false;
             }
-
-            // Success Alert Message triggered if all checks clear
             alert(" Success! Your registration form passed validation and was submitted successfully.");
             return true;
         }
     </script>
-
 </body>
 </html>
