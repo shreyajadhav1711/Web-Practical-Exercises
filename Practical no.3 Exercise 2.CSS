@@ -1,7 +1,4 @@
-/* Import a custom Google Font */
 @import url('https://googleapis.com');
-
-/* Reset and Core Body Setup */
 body {
     margin: 0;
     padding: 0;
@@ -9,23 +6,16 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    /* 1. Gradient Background */
     background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
-    /* 3. Custom Fonts */
     font-family: 'Poppins', sans-serif;
     color: #ffffff;
 }
-
-/* Layout Container */
 .container {
     width: 90%;
     max-width: 1000px;
     padding: 40px 20px;
-    /* 3. Text Alignment */
     text-align: center;
 }
-
-/* 2. Styled Heading and Paragraph */
 h1 {
     font-size: 3rem;
     font-weight: 700;
@@ -33,23 +23,18 @@ h1 {
     letter-spacing: 1px;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
 }
-
 .subtitle {
     font-size: 1.2rem;
     font-weight: 300;
     color: #e0e6ed;
     margin-bottom: 50px;
 }
-
-/* Content Grid Layout */
 .demo-grid {
     display: flex;
     flex-wrap: wrap;
     gap: 30px;
     justify-content: center;
 }
-
-/* Base Card Styling */
 .card {
     background: rgba(255, 255, 255, 0.1);
     backdrop-filter: blur(10px);
@@ -59,20 +44,16 @@ h1 {
     width: 320px;
     box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.2);
 }
-
 .card h2 {
     font-size: 1.5rem;
     margin-top: 0;
     color: #00f2fe;
 }
-
 .card p {
     font-size: 0.95rem;
     line-height: 1.6;
     color: #f1f2f6;
 }
-
-/* 4. Button with Hover Transition Effect */
 .btn-transition {
     background: #00f2fe;
     color: #1e3c72;
@@ -83,36 +64,27 @@ h1 {
     border-radius: 25px;
     cursor: pointer;
     margin-top: 15px;
-    /* Setup transition tracking for all animatable properties */
     transition: all 0.4s ease;
 }
-
 .btn-transition:hover {
     background: #4facfe;
     color: #ffffff;
     box-shadow: 0 0 15px #4facfe;
     letter-spacing: 1px;
 }
-
-/* 5. Box with Transform Effect */
 .transform-box {
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
-
 .transform-box:hover {
-    /* Scale upward slightly and lift on the Y-axis */
     transform: translateY(-10px) scale(1.03);
     box-shadow: 0 15px 40px rgba(0, 0, 0, 0.4);
     border-color: rgba(0, 242, 254, 0.4);
 }
-
-/* 6. Rotating Animated Box using CSS Keyframes */
 .animation-container {
     display: flex;
     flex-direction: column;
     align-items: center;
 }
-
 .rotating-cube {
     width: 60px;
     height: 60px;
@@ -120,11 +92,8 @@ h1 {
     margin-top: 25px;
     border-radius: 12px;
     box-shadow: 0 0 20px rgba(255, 0, 127, 0.5);
-    /* Attach keyframes animation running infinitely */
     animation: continuousRotation 4s linear infinite;
 }
-
-/* Define keyframes for 3D spin rotation */
 @keyframes continuousRotation {
     0% {
         transform: rotate(0deg);
