@@ -1,20 +1,38 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>CSS3 Example</title>
-    <link rel="stylesheet" href="Practical no.3 Exercise 2.CSS">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS3 Advanced Styling Exercise</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <h1>My CSS3 Webpage</h1>
+    <main class="container">
+        <!-- Styled Headings and Paragraphs -->
+        <h1>Explore CSS3 Features</h1>
+        <p class="subtitle">A demonstration of gradients, transitions, transforms, and animations.</p>
 
-    <p>This is a simple webpage created using CSS3.</p>
+        <!-- Container for Interactive Elements -->
+        <section class="demo-grid">
+            
+            <!-- Box with Transform Effect -->
+            <div class="card transform-box">
+                <h2>Hover Transform</h2>
+                <p>Hover over this card to see a smooth CSS3 3D lift and scaling effect.</p>
+                <!-- Button with Transition Effect -->
+                <button class="btn-transition">Interactive Button</button>
+            </div>
 
-    <button>Click Me</button>
+            <!-- Rotating Animated Box -->
+            <div class="card animation-container">
+                <h2>Keyframe Animation</h2>
+                <p>Below is a custom box continuously rotating in 3D space using keyframes.</p>
+                <div class="rotating-cube"></div>
+            </div>
 
-    <div class="box">Hover Me</div>
-
-    <div class="rotate">CSS3</div>
+        </section>
+    </main>
 
 </body>
 </html>
