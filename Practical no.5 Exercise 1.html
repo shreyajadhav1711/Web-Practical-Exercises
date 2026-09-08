@@ -1,46 +1,143 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>DOM Operations</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercise 1: DOM Operations Demonstration</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 40px auto;
+            max-width: 600px;
+            padding: 20px;
+            background-color: #f7fafc;
+            color: #2d3748;
+        }
+        .container {
+            background-color: #ffffff;
+            padding: 25px;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+            margin-bottom: 20px;
+        }
+        .interactive-image {
+            width: 100%;
+            max-width: 300px;
+            height: auto;
+            border-radius: 6px;
+            display: block;
+            margin: 15px 0;
+            border: 2px solid #e2e8f0;
+        }
+        .btn-group {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 10px;
+            margin-top: 20px;
+        }
+        button {
+            background-color: #4a5568;
+            color: white;
+            border: none;
+            padding: 10px;
+            font-size: 14px;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background 0.2s;
+        }
+        button:hover {
+            background-color: #2d3748;
+        }
+        a {
+            display: inline-block;
+            margin-top: 10px;
+            font-weight: bold;
+            color: #3182ce;
+            text-decoration: none;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+    </style>
 </head>
 <body>
-    <h1 id="heading">Old Heading</h1>
-    <p id="paragraph">Old Paragraph</p>
-    <p id="text">Old Text</p>
-    <img id="myImage"
-         src="https://via.placeholder.com/200"
-         width="200">
-    <br><br>
 
-    <a id="link" href="https://www.google.com">
-        Old Link
-    </a>
-    <br><br>
-  
-    <button onclick="changePage()">Change Content</button>
+    <div class="container">
+        <!-- 1. Heading element target -->
+        <h1 id="mainHeading">Original Title</h1>
+
+        <!-- 2. Paragraph element target for innerText -->
+        <p id="textParagraph">This is the original paragraph text.</p>
+
+        <!-- 3. Element target for textContent -->
+        <div id="contentDisplay">Initial plain placeholder text.</div>
+        
+        <!-- 5. Image element target -->
+        <img id="dynamicImage" class="interactive-image" src="https://picsum.photos" alt="Initial Image">
+
+        <!-- 6. Hyperlink element target -->
+        <a id="dynamicLink" href="https://example.com" target="_blank">Visit Example Website</a>
+    </div>
+
+    <!-- Control station to fire DOM modifications -->
+    <div class="btn-group">
+        <button onclick="modifyHeading()">1. Change via innerHTML</button>
+        <button onclick="modifyParagraph()">2. Change via innerText</button>
+        <button onclick="modifyContent()">3. Display via textContent</button>
+        <button onclick="modifyStyles()">4. Change Style (Color & Size)</button>
+        <button onclick="modifyImage()">5. Change Image Dynamically</button>
+        <button onclick="modifyLink()">6. Change Hyperlink Dynamically</button>
+    </div>
+
     <script>
-        function changePage() {
-            document.getElementById("heading").innerHTML =
-                "Welcome to My Webpage";
+        // 1. Change heading using innerHTML (allows evaluating HTML tags like <span> or <em>)
+        function modifyHeading() {
+            const heading = document.getElementById("mainHeading");
+            heading.innerHTML = "Updated Title with <span style='color: #e53e3e;'>innerHTML Sparkle</span>";
+            console.log("Heading swapped out using .innerHTML property.");
+        }
 
-            document.getElementById("paragraph").innerText =
-                "This paragraph has been changed using innerText.";
+        // 2. Change paragraph using innerText (renders text safely exactly as seen on screen)
+        function modifyParagraph() {
+            const paragraph = document.getElementById("textParagraph");
+            paragraph.innerText = "This paragraph's body text was completely re-assigned using the clean .innerText string injection approach.";
+            console.log("Paragraph modified with .innerText.");
+        }
 
-            document.getElementById("text").textContent =
-                "This text is displayed using textContent.";
+        // 3. Display text using textContent (safe, efficient, raw text alteration method)
+        function modifyContent() {
+            const block = document.getElementById("contentDisplay");
+            block.textContent = "Raw textual data refreshed successfully using .textContent interface.";
+            console.log("Text nodes rendered raw using .textContent.");
+        }
 
-            document.getElementById("text").style.color = "blue";
-            document.getElementById("text").style.fontSize = "25px";
+        // 4. Change text color and font size via element style modifications
+        function modifyStyles() {
+            const paragraph = document.getElementById("textParagraph");
+            // Direct injection to style sub-properties
+            paragraph.style.color = "#2b6cb0"; 
+            paragraph.style.fontSize = "20px";
+            console.log("Paragraph updated to customized visual layout theme.");
+        }
 
-            document.getElementById("myImage").src =
-                "https://via.placeholder.com/200/00ff00";
+        // 5. Change image dynamically via attribute property reassignment
+        function modifyImage() {
+            const image = document.getElementById("dynamicImage");
+            // Alters source link point and descriptive auxiliary elements
+            image.src = "https://picsum.photos";
+            image.alt = "New dynamically swapped landscape visual view";
+            console.log("Image source reference directed to alternative location frame.");
+        }
 
-            document.getElementById("link").href =
-                "https://www.wikipedia.org";
-
-            document.getElementById("link").innerText =
-                "Visit Wikipedia";
+        // 6. Change hyperlink destination and display text dynamically
+        function modifyLink() {
+            const link = document.getElementById("dynamicLink");
+            // Update active absolute web navigation address anchor path
+            link.href = "https://wikipedia.org";
+            link.textContent = "Explore Global Database on Wikipedia";
+            console.log("Hyperlink reference and visual text shifted targets successfully.");
         }
     </script>
+
 </body>
 </html>
