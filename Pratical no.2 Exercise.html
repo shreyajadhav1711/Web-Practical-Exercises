@@ -1,64 +1,77 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Student Registration Form</title>
-    <style>
-        body{
-            text-align: center;
-        }
-        form{
-            display: inline-block;
-            text-align: left;
-        }
-    </style>
 </head>
-
 <body>
 
-    <h1>Student Registration Form</h1>
+    <h2>Student Registration Form</h2>
 
-    <form>
-
-        <label for="fullname">Full Name:</label>
-        <input type="text" id="fullname" name="fullname" required>
-        <br><br>
-
-        <label for="email">Email Address:</label>
-        <input type="email" id="email" name="email" required>
-        <br><br>
-
-        <label for="password">Password:</label>
-        <input type="password" id="password" name="password" required>
-        <br><br>
-
-        <label for="mobile">Mobile Number:</label>
-        <input type="tel" id="mobile" name="mobile" required>
-        <br><br>
-
-        <label for="dob">Date of Birth:</label>
-        <input type="date" id="dob" name="dob" required>
-        <br><br>
-
-        <label>Gender:</label>
-
-        <input type="radio" id="male" name="gender" value="male">
-        <label for="male">Male</label>
-
-        <input type="radio" id="female" name="gender" value="female">
-        <label for="female">Female</label>
-
-        <input type="radio" id="other" name="gender" value="other">
-        <label for="other">Other</label>
-
-        <br><br>
-
-        <label for="address">Address:</label>
+    <form action="#" method="POST">
+        
+        <!-- Full Name -->
+        <div>
+            <label for="fullName">Full Name:</label>
+            <input type="text" id="fullName" name="fullName" required placeholder="John Doe">
+        </div>
         <br>
-        <textarea id="address" name="address" rows="5" cols="40"></textarea>
-        <br><br>
 
-        <input type="submit" value="Submit">
-        <input type="reset" value="Reset">
+        <!-- Email Address -->
+        <div>
+            <label for="email">Email Address:</label>
+            <input type="email" id="email" name="email" required placeholder="johndoe@example.com">
+        </div>
+        <br>
+
+        <!-- Password -->
+        <div>
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" required placeholder="Enter password">
+        </div>
+        <br>
+
+        <!-- Mobile Number -->
+        <div>
+            <label for="mobile">Mobile Number:</label>
+            <input type="tel" id="mobile" name="mobile" required placeholder="1234567890">
+        </div>
+        <br>
+
+        <!-- Date of Birth -->
+        <div>
+            <label for="dob">Date of Birth:</label>
+            <input type="date" id="dob" name="dob" required>
+        </div>
+        <br>
+
+        <!-- Gender (Radio Buttons) -->
+        <div>
+            <label>Gender:</label>
+            <input type="radio" id="male" name="gender" value="male" required>
+            <label for="male">Male</label>
+            
+            <input type="radio" id="female" name="gender" value="female">
+            <label for="female">Female</label>
+            
+            <input type="radio" id="other" name="gender" value="other">
+            <label for="other">Other</label>
+        </div>
+        <br>
+
+        <!-- Address (Textarea) -->
+        <div>
+            <label for="address">Address:</label><br>
+            <textarea id="address" name="address" rows="4" cols="40" required placeholder="Enter your full permanent address..."></textarea>
+        </div>
+        <br>
+
+        <!-- Submit and Reset Buttons -->
+        <div>
+            <button type="submit">Submit</button>
+            <button type="reset">Reset</button>
+        </div>
 
     </form>
 
