@@ -1,66 +1,145 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>JavaScript DOM Example</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercise 2: Full Element Transformation</title>
     <style>
+        /* Base Styling Rules */
         body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 40px 20px;
+            background-color: #f7fafc; /* Initial Background Color */
+            color: #2d3748;
+            transition: background-color 0.4s ease, color 0.4s ease;
+        }
+        .showcase-card {
+            background-color: #ffffff;
+            max-width: 500px;
+            margin: 0 auto;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
             text-align: center;
-            font-family: Arial;
-            background-color: lightblue;
+            transition: all 0.4s ease;
         }
-        .newClass {
-            color: red;
-            font-size: 35px;
-            font-family: Georgia;
+        #mainHeading {
+            color: #2b6cb0;
+            font-size: 24px; /* Initial Font Size */
+            margin-top: 0;
+            transition: font-size 0.4s ease, color 0.4s ease;
         }
-        img {
-            width: 200px;
+        #mainParagraph {
+            font-size: 16px; /* Initial Font Size */
+            line-height: 1.6;
+            color: #4a5568;
+            transition: font-size 0.4s ease;
         }
-        button {
-            padding: 10px 20px;
-            background-color: green;
+        .display-img {
+            width: 100%;
+            max-height: 250px;
+            object-fit: cover;
+            border-radius: 6px;
+            margin: 15px 0;
+            border: 2px solid #e2e8f0;
+        }
+        .action-link {
+            display: inline-block;
+            margin-bottom: 25px;
+            color: #3182ce;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        .action-link:hover {
+            text-decoration: underline;
+        }
+        .transform-btn {
+            background-color: #4a5568;
             color: white;
             border: none;
+            padding: 12px 24px;
+            font-size: 16px;
+            font-weight: bold;
+            border-radius: 4px;
+            cursor: pointer;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        .transform-btn:hover {
+            background-color: #2d3748;
+        }
+
+        /* NEW CSS CLASS TRIGGERED BY JAVASCRIPT */
+        .cyber-theme {
+            background-color: #1a202c !important; /* Vivid dark background swap */
+            border: 3px solid #38b2ac;
+            box-shadow: 0 10px 20px rgba(56, 178, 172, 0.2);
+            transform: scale(1.02);
         }
     </style>
 </head>
 <body>
-    <h1 id="heading">My Heading</h1>
-    <p id="paragraph">This is my paragraph.</p>
-    <img id="image" src="https://via.placeholder.com/200">
-    <br><br>
-    <a id="link" href="https://www.google.com">
-        Visit Google
-    </a>
-    <br><br>
 
-    <button onclick="changeContent()">Click Me</button>
+    <!-- Main Container Card -->
+    <div id="cardContainer" class="showcase-card">
+        
+        <!-- 1. Heading -->
+        <h1 id="mainHeading">Daytime Nature View</h1>
+
+        <!-- 2. Paragraph -->
+        <p id="mainParagraph">This layout showcases a standard daytime configuration template. Clicking the action trigger button below will execute a complete DOM transformation on this document layer.</p>
+
+        <!-- 3. Image -->
+        <img id="mainImage" class="display-img" src="https://picsum.photos" alt="Daytime Hills Image">
+
+        <div>
+            <!-- 4. Hyperlink -->
+            <a id="mainLink" class="action-link" href="https://example.com" target="_blank">Go to Example.com</a>
+        </div>
+
+        <!-- 5. Button (Equipped with onclick Event) -->
+        <button class="transform-btn" onclick="transformPage()">Transform All Elements</button>
+        
+    </div>
+
     <script>
-        function changeContent() {
-          
-            document.getElementById("heading").innerHTML =
-                "Heading Changed!";
+        function transformPage() {
+            // Target all primary DOM element references
+            const heading = document.getElementById("mainHeading");
+            const paragraph = document.getElementById("mainParagraph");
+            const image = document.getElementById("mainImage");
+            const link = document.getElementById("mainLink");
+            const card = document.getElementById("cardContainer");
 
-            document.getElementById("paragraph").innerHTML =
-                "The paragraph has been changed using JavaScript.";
+            // 1. Change heading text
+            heading.textContent = "🌌 Midnight Neon Transformation";
+            heading.style.color = "#38b2ac"; // Adjusting text color inside heading node
 
-            document.getElementById("image").src =
-                "https://via.placeholder.com/200/ff0000";
+            // 2. Change paragraph content
+            paragraph.textContent = "The layout environment has completely inverted! JavaScript has altered text fields, updated asset sources, updated inline style metrics, and successfully applied a brand new CSS structural class rule mapping.";
 
-            document.getElementById("link").href =
-                "https://www.wikipedia.org";
+            // 3. Change image source and description
+            image.src = "https://picsum.photos";
+            image.alt = "Midnight City Lights Image";
 
-            document.getElementById("link").innerHTML =
-                "Visit Wikipedia";
+            // 4. Change hyperlink route and text
+            link.href = "https://wikipedia.org";
+            link.textContent = "Explore Global Database on Wikipedia";
+            link.style.color = "#38b2ac";
 
-            document.body.style.backgroundColor = "lightgreen";
+            // 5. Change body page background color
+            document.body.style.backgroundColor = "#0f172a";
 
-            document.getElementById("paragraph").style.fontSize =
-                "25px";
+            // 6. Change font sizing scales across multiple nodes
+            heading.style.fontSize = "32px";
+            paragraph.style.fontSize = "18px";
 
-            document.getElementById("heading").className =
-                "newClass";
+            // 7. Change CSS class using classList.add()
+            card.classList.add("cyber-theme");
+
+            console.log("Full layout DOM transformation action completed successfully.");
         }
     </script>
+
 </body>
 </html>
