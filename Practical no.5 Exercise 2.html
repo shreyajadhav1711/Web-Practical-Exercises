@@ -5,12 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Exercise 2: Full Element Transformation</title>
     <style>
-        /* Base Styling Rules */
         body {
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 40px 20px;
-            background-color: #f7fafc; /* Initial Background Color */
+            background-color: #f7fafc;
             color: #2d3748;
             transition: background-color 0.4s ease, color 0.4s ease;
         }
@@ -26,12 +25,12 @@
         }
         #mainHeading {
             color: #2b6cb0;
-            font-size: 24px; /* Initial Font Size */
+            font-size: 24px; 
             margin-top: 0;
             transition: font-size 0.4s ease, color 0.4s ease;
         }
         #mainParagraph {
-            font-size: 16px; /* Initial Font Size */
+            font-size: 16px;
             line-height: 1.6;
             color: #4a5568;
             transition: font-size 0.4s ease;
@@ -68,10 +67,8 @@
         .transform-btn:hover {
             background-color: #2d3748;
         }
-
-        /* NEW CSS CLASS TRIGGERED BY JAVASCRIPT */
         .cyber-theme {
-            background-color: #1a202c !important; /* Vivid dark background swap */
+            background-color: #1a202c !important;
             border: 3px solid #38b2ac;
             box-shadow: 0 10px 20px rgba(56, 178, 172, 0.2);
             transform: scale(1.02);
@@ -79,67 +76,36 @@
     </style>
 </head>
 <body>
-
-    <!-- Main Container Card -->
     <div id="cardContainer" class="showcase-card">
-        
-        <!-- 1. Heading -->
         <h1 id="mainHeading">Daytime Nature View</h1>
-
-        <!-- 2. Paragraph -->
         <p id="mainParagraph">This layout showcases a standard daytime configuration template. Clicking the action trigger button below will execute a complete DOM transformation on this document layer.</p>
-
-        <!-- 3. Image -->
         <img id="mainImage" class="display-img" src="https://picsum.photos" alt="Daytime Hills Image">
-
         <div>
-            <!-- 4. Hyperlink -->
             <a id="mainLink" class="action-link" href="https://example.com" target="_blank">Go to Example.com</a>
         </div>
-
-        <!-- 5. Button (Equipped with onclick Event) -->
         <button class="transform-btn" onclick="transformPage()">Transform All Elements</button>
-        
     </div>
-
     <script>
         function transformPage() {
-            // Target all primary DOM element references
             const heading = document.getElementById("mainHeading");
             const paragraph = document.getElementById("mainParagraph");
             const image = document.getElementById("mainImage");
             const link = document.getElementById("mainLink");
             const card = document.getElementById("cardContainer");
-
-            // 1. Change heading text
             heading.textContent = "🌌 Midnight Neon Transformation";
-            heading.style.color = "#38b2ac"; // Adjusting text color inside heading node
-
-            // 2. Change paragraph content
+            heading.style.color = "#38b2ac"; 
             paragraph.textContent = "The layout environment has completely inverted! JavaScript has altered text fields, updated asset sources, updated inline style metrics, and successfully applied a brand new CSS structural class rule mapping.";
-
-            // 3. Change image source and description
             image.src = "https://picsum.photos";
             image.alt = "Midnight City Lights Image";
-
-            // 4. Change hyperlink route and text
             link.href = "https://wikipedia.org";
             link.textContent = "Explore Global Database on Wikipedia";
             link.style.color = "#38b2ac";
-
-            // 5. Change body page background color
             document.body.style.backgroundColor = "#0f172a";
-
-            // 6. Change font sizing scales across multiple nodes
             heading.style.fontSize = "32px";
             paragraph.style.fontSize = "18px";
-
-            // 7. Change CSS class using classList.add()
             card.classList.add("cyber-theme");
-
             console.log("Full layout DOM transformation action completed successfully.");
         }
     </script>
-
 </body>
 </html>
