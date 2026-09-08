@@ -1,34 +1,42 @@
+/* Style the entire background and default font family */
 body {
-    background-color: lightblue;
-    font-family: Arial, sans-serif;
-    color: #333333;
-    text-align: center;
-}
-
-h1 {
-    color: darkblue;
-    font-family: Georgia, serif;
-    font-size: 40px;
-    font-weight: bold;
-}
-
-h2 {
-    color: darkgreen;
-    font-family: Verdana, sans-serif;
-    font-size: 28px;
-}
-
-p {
-    color: #444444;
-    font-family: "Trebuchet MS", sans-serif;
-    font-size: 18px;
+    background-color: #f4f7f6; /* Soft light gray/teal background color */
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Clean sans-serif font */
+    color: #333333; /* Dark gray text color for readability */
     line-height: 1.6;
+    padding: 20px;
 }
 
+/* Style the main heading */
+h1 {
+    color: #2c3e50; /* Deep navy blue color */
+    font-family: 'Georgia', serif; /* Elegant serif font for headings */
+    font-size: 2.5rem; /* Larger text size */
+    font-weight: 700; /* Bold weight */
+    border-bottom: 2px solid #3498db; /* Blue accent line below heading */
+    padding-bottom: 10px;
+}
 
-.highlight {
-    color: white;
-    background-color: purple;
-    padding: 15px;
-    font-style: italic;
+/* Style paragraphs using a specific class */
+p.intro-text {
+    color: #e67e22; /* Vibrant orange color */
+    font-size: 1.2rem; /* Slightly larger text */
+    font-style: italic; /* Italicized text */
+}
+
+/* Style interactive elements like a button */
+button {
+    background-color: #3498db; /* Blue background */
+    color: #ffffff; /* White text color */
+    font-size: 1rem;
+    font-weight: 600;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+/* Add a hover effect to change color dynamically */
+button:hover {
+    background-color: #2980b9; /* Darker blue on hover */
 }
